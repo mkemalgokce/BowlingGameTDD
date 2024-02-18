@@ -9,6 +9,9 @@ import XCTest
 
 class Game {
     
+    func roll(_ pins: Int) {
+        
+    }
 }
 
 final class BowlingGameTDDTests: XCTestCase {
