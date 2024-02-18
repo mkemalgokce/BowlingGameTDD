@@ -39,7 +39,7 @@ final class BowlingGameTDDTests: XCTestCase {
         XCTAssertEqual(20, game.score())
     }
     
-    func skip_testOneSpare() {
+    func testOneSpare() {
         game.roll(5)
         game.roll(5) // spare
         game.roll(3)
