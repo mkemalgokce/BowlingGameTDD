@@ -16,4 +16,9 @@ final class BowlingGameTDDTests: XCTestCase {
     func testCanCreateGame() {
         let game = Game()
     }
+    
+    func testCanRoll() {
+        let game = Game()
+        game.roll(0)
+    }
 }
