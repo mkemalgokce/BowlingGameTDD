@@ -39,6 +39,16 @@ final class BowlingGameTDDTests: XCTestCase {
         XCTAssertEqual(20, game.score())
     }
     
+    func testOneSpare() {
+        game.roll(5)
+        game.roll(5) // spare
+        game.roll(3)
+        rollMany(numberOfRolls: 17, pins: 0)
+        
+        XCTAssertEqual(16, game.score())
+        
+    }
+    
     //MARK: - Helpers
     func rollMany(numberOfRolls n: Int, pins: Int) {
         for i in 0 ..< n {
