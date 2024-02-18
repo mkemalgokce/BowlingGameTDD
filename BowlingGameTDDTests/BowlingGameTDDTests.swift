@@ -15,13 +15,14 @@ class Game {
 }
 
 final class BowlingGameTDDTests: XCTestCase {
-   
-    func testCanCreateGame() {
-        let game = Game()
+    private var game: Game!
+    
+    override func setUp() {
+        super.setUp()
+        game = Game()
     }
     
     func testCanRoll() {
-        let game = Game()
         game.roll(0)
     }
 }
