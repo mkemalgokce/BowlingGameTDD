@@ -7,6 +7,10 @@
 
 import XCTest
 
+class Game {
+    
+}
+
 final class BowlingGameTDDTests: XCTestCase {
    
     func testCanCreateGame() {
