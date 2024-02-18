@@ -15,7 +15,20 @@ class Game {
     }
     
     func score() -> Int {
-        rolls.reduce(0) { $0 + $1 }
+        var score = 0
+        var i = 0
+        
+        for frame in 0 ..< 10 {
+            if (rolls[i] + rolls[i+1] == 10) {
+                score += 10 + rolls[i+2]
+            }else {
+                score += rolls[i] + rolls[i + 1]
+            }
+            
+            i += 2
+        }
+        
+        return score
     }
 }
 
@@ -39,7 +52,7 @@ final class BowlingGameTDDTests: XCTestCase {
         XCTAssertEqual(20, game.score())
     }
     
-    func skip_testOneSpare() {
+    func testOneSpare() {
         game.roll(5)
         game.roll(5) // spare
         game.roll(3)
