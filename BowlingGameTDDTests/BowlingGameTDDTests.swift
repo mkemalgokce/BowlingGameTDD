@@ -8,27 +8,37 @@
 import XCTest
 
 class Game {
-    private var rolls: [Int] = []
-
+    private var rolls: [Int] = Array(repeating: 0, count: 21)
+    private var currentRoll = 0
+    
     func roll(_ pins: Int) {
-        rolls.append(pins)
+        rolls[currentRoll] = pins
+        currentRoll += 1
     }
     
     func score() -> Int {
         var score = 0
-        var i = 0
+        var firstInFrame = 0
         
         for frame in 0 ..< 10 {
-            if (rolls[i] + rolls[i+1] == 10) {
-                score += 10 + rolls[i+2]
+            if (rolls[firstInFrame] == 10) {
+                score += 10 + rolls[firstInFrame + 1] + rolls[firstInFrame + 2]
+                firstInFrame += 1
+            }else if (isSpare(firstInFrame)) {
+                score += 10 + rolls[firstInFrame + 2]
+                firstInFrame += 2
             }else {
-                score += rolls[i] + rolls[i + 1]
+                score += rolls[firstInFrame] + rolls[firstInFrame + 1]
+                firstInFrame += 2
             }
-            
-            i += 2
+
         }
         
         return score
+    }
+    
+    func isSpare(_ firstInFrame: Int) -> Bool {
+        rolls[firstInFrame] + rolls[firstInFrame + 1] == 10
     }
 }
 
@@ -53,19 +63,31 @@ final class BowlingGameTDDTests: XCTestCase {
     }
     
     func testOneSpare() {
-        game.roll(5)
-        game.roll(5) // spare
+        rollSpare()
         game.roll(3)
         rollMany(numberOfRolls: 17, pins: 0)
         
         XCTAssertEqual(16, game.score())
+    }
+    
+    func testOneStrike() {
+        game.roll(10) // strike
+        game.roll(3)
+        game.roll(4)
+        rollMany(numberOfRolls: 16, pins: 0)
+        XCTAssertEqual(24, game.score())
         
     }
     
     //MARK: - Helpers
-    func rollMany(numberOfRolls n: Int, pins: Int) {
-        for i in 0 ..< n {
+    private func rollMany(numberOfRolls n: Int, pins: Int) {
+        for _ in 0 ..< n {
             game.roll(pins)
         }
+    }
+    
+    private func rollSpare() {
+        game.roll(5)
+        game.roll(5)
     }
 }
