@@ -87,7 +87,7 @@ final class BowlingGameTDDTests: XCTestCase {
     }
     
     func testOneStrike() {
-        game.roll(10) // strike
+        rollStrike()
         game.roll(3)
         game.roll(4)
         rollMany(numberOfRolls: 16, pins: 0)
@@ -105,5 +105,9 @@ final class BowlingGameTDDTests: XCTestCase {
     private func rollSpare() {
         game.roll(5)
         game.roll(5)
+    }
+    
+    private func rollStrike() {
+        game.roll(10)
     }
 }
