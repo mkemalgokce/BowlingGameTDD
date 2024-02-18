@@ -8,13 +8,14 @@
 import XCTest
 
 class Game {
+    private var gameScore: Int = 0
     
     func roll(_ pins: Int) {
-        
+        gameScore += pins
     }
     
     func score() -> Int {
-        return 0
+        return gameScore
     }
 }
 
