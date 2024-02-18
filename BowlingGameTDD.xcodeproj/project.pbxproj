@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		553D0AF72B82224800AF9E9B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D0AF62B82224800AF9E9B /* main.swift */; };
+		553D0B042B82225500AF9E9B /* BowlingGameTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D0B032B82225500AF9E9B /* BowlingGameTDDTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +26,19 @@
 /* Begin PBXFileReference section */
 		553D0AF32B82224800AF9E9B /* BowlingGameTDD */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BowlingGameTDD; sourceTree = BUILT_PRODUCTS_DIR; };
 		553D0AF62B82224800AF9E9B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		553D0B012B82225500AF9E9B /* BowlingGameTDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingGameTDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		553D0B032B82225500AF9E9B /* BowlingGameTDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameTDDTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		553D0AF02B82224800AF9E9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		553D0AFE2B82225500AF9E9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				553D0AF52B82224800AF9E9B /* BowlingGameTDD */,
+				553D0B022B82225500AF9E9B /* BowlingGameTDDTests */,
 				553D0AF42B82224800AF9E9B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				553D0AF32B82224800AF9E9B /* BowlingGameTDD */,
+				553D0B012B82225500AF9E9B /* BowlingGameTDDTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +72,14 @@
 				553D0AF62B82224800AF9E9B /* main.swift */,
 			);
 			path = BowlingGameTDD;
+			sourceTree = "<group>";
+		};
+		553D0B022B82225500AF9E9B /* BowlingGameTDDTests */ = {
+			isa = PBXGroup;
+			children = (
+				553D0B032B82225500AF9E9B /* BowlingGameTDDTests.swift */,
+			);
+			path = BowlingGameTDDTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +102,23 @@
 			productReference = 553D0AF32B82224800AF9E9B /* BowlingGameTDD */;
 			productType = "com.apple.product-type.tool";
 		};
+		553D0B002B82225500AF9E9B /* BowlingGameTDDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 553D0B052B82225500AF9E9B /* Build configuration list for PBXNativeTarget "BowlingGameTDDTests" */;
+			buildPhases = (
+				553D0AFD2B82225500AF9E9B /* Sources */,
+				553D0AFE2B82225500AF9E9B /* Frameworks */,
+				553D0AFF2B82225500AF9E9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BowlingGameTDDTests;
+			productName = BowlingGameTDDTests;
+			productReference = 553D0B012B82225500AF9E9B /* BowlingGameTDDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +130,9 @@
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					553D0AF22B82224800AF9E9B = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					553D0B002B82225500AF9E9B = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -111,9 +151,20 @@
 			projectRoot = "";
 			targets = (
 				553D0AF22B82224800AF9E9B /* BowlingGameTDD */,
+				553D0B002B82225500AF9E9B /* BowlingGameTDDTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		553D0AFF2B82225500AF9E9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		553D0AEF2B82224800AF9E9B /* Sources */ = {
@@ -121,6 +172,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				553D0AF72B82224800AF9E9B /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		553D0AFD2B82225500AF9E9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				553D0B042B82225500AF9E9B /* BowlingGameTDDTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +326,36 @@
 			};
 			name = Release;
 		};
+		553D0B062B82225500AF9E9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q9ARVAPAG3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkg.BowlingGameTDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		553D0B072B82225500AF9E9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q9ARVAPAG3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkg.BowlingGameTDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +373,15 @@
 			buildConfigurations = (
 				553D0AFB2B82224800AF9E9B /* Debug */,
 				553D0AFC2B82224800AF9E9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		553D0B052B82225500AF9E9B /* Build configuration list for PBXNativeTarget "BowlingGameTDDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				553D0B062B82225500AF9E9B /* Debug */,
+				553D0B072B82225500AF9E9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
