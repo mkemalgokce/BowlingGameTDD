@@ -39,23 +39,23 @@ public final class Game {
         return score
     }
     
-    func isStrike(_ firstInFrame: Int) -> Bool {
+    private func isStrike(_ firstInFrame: Int) -> Bool {
         rolls[firstInFrame] == 10
     }
     
-    func isSpare(_ firstInFrame: Int) -> Bool {
+    private func isSpare(_ firstInFrame: Int) -> Bool {
         rolls[firstInFrame] + rolls[firstInFrame + 1] == 10
     }
     
-    func twoBallsInFrame(_ firstInFrame: Int) -> Int {
+    private func twoBallsInFrame(_ firstInFrame: Int) -> Int {
         rolls[firstInFrame] + rolls[firstInFrame + 1]
     }
     
-    func nextTwoBallsForStrike(_ firstInFrame: Int) -> Int {
+    private func nextTwoBallsForStrike(_ firstInFrame: Int) -> Int {
         rolls[firstInFrame + 1] + rolls[firstInFrame + 2]
     }
     
-    func nextBallForSpare(_ firstInFrame: Int) -> Int {
+    private func nextBallForSpare(_ firstInFrame: Int) -> Int {
         rolls[firstInFrame + 2]
     }
 }
