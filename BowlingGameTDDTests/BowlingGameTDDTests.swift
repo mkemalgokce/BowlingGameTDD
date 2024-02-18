@@ -27,23 +27,22 @@ final class BowlingGameTDDTests: XCTestCase {
         game = Game()
     }
     
-    func testCanRoll() {
-        game.roll(0)
-    }
-    
     func testGutterGame() {
-        for i in 0 ..< 20 {
-            game.roll(0)
-        }
-        
+        rollMany(numberOfRolls: 20, pins: 0)
+
         XCTAssertEqual(game.score(), 0)
     }
     
     func testAllOnes() {
-        for i in 0 ..< 20 {
-            game.roll(1)
-        }
+        rollMany(numberOfRolls: 20, pins: 1)
         
         XCTAssertEqual(20, game.score())
+    }
+    
+    //MARK: - Helpers
+    func rollMany(numberOfRolls n: Int, pins: Int) {
+        for i in 0 ..< n {
+            game.roll(pins)
+        }
     }
 }
