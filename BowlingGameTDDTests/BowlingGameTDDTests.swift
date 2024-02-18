@@ -21,14 +21,14 @@ class Game {
         var firstInFrame = 0
         
         for frame in 0 ..< 10 {
-            if (rolls[firstInFrame] == 10) {
-                score += 10 + rolls[firstInFrame + 1] + rolls[firstInFrame + 2]
+            if (isStrike(firstInFrame)) {
+                score += 10 + nextTwoBallsForStrike(firstInFrame)
                 firstInFrame += 1
             }else if (isSpare(firstInFrame)) {
-                score += 10 + rolls[firstInFrame + 2]
+                score += 10 + nextBallForSpare(firstInFrame)
                 firstInFrame += 2
             }else {
-                score += rolls[firstInFrame] + rolls[firstInFrame + 1]
+                score += twoBallsInFrame(firstInFrame)
                 firstInFrame += 2
             }
 
@@ -37,8 +37,24 @@ class Game {
         return score
     }
     
+    func isStrike(_ firstInFrame: Int) -> Bool {
+        rolls[firstInFrame] == 10
+    }
+    
     func isSpare(_ firstInFrame: Int) -> Bool {
         rolls[firstInFrame] + rolls[firstInFrame + 1] == 10
+    }
+    
+    func twoBallsInFrame(_ firstInFrame: Int) -> Int {
+        rolls[firstInFrame] + rolls[firstInFrame + 1]
+    }
+    
+    func nextTwoBallsForStrike(_ firstInFrame: Int) -> Int {
+        rolls[firstInFrame + 1] + rolls[firstInFrame + 2]
+    }
+    
+    func nextBallForSpare(_ firstInFrame: Int) -> Int {
+        rolls[firstInFrame + 2]
     }
 }
 
