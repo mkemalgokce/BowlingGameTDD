@@ -25,4 +25,12 @@ final class BowlingGameTDDTests: XCTestCase {
     func testCanRoll() {
         game.roll(0)
     }
+    
+    func gutterGame() {
+        for i in 0 ..< 20 {
+            game.roll(0)
+        }
+        
+        XCTAssertEqual(game.score(), 0)
+    }
 }
