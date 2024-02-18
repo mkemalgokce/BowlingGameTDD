@@ -7,57 +7,6 @@
 
 import XCTest
 
-class Game {
-    private var rolls: [Int] = Array(repeating: 0, count: 21)
-    private var currentRoll = 0
-    
-    func roll(_ pins: Int) {
-        rolls[currentRoll] = pins
-        currentRoll += 1
-    }
-    
-    func score() -> Int {
-        var score = 0
-        var firstInFrame = 0
-        
-        for frame in 0 ..< 10 {
-            if (isStrike(firstInFrame)) {
-                score += 10 + nextTwoBallsForStrike(firstInFrame)
-                firstInFrame += 1
-            }else if (isSpare(firstInFrame)) {
-                score += 10 + nextBallForSpare(firstInFrame)
-                firstInFrame += 2
-            }else {
-                score += twoBallsInFrame(firstInFrame)
-                firstInFrame += 2
-            }
-
-        }
-        
-        return score
-    }
-    
-    func isStrike(_ firstInFrame: Int) -> Bool {
-        rolls[firstInFrame] == 10
-    }
-    
-    func isSpare(_ firstInFrame: Int) -> Bool {
-        rolls[firstInFrame] + rolls[firstInFrame + 1] == 10
-    }
-    
-    func twoBallsInFrame(_ firstInFrame: Int) -> Int {
-        rolls[firstInFrame] + rolls[firstInFrame + 1]
-    }
-    
-    func nextTwoBallsForStrike(_ firstInFrame: Int) -> Int {
-        rolls[firstInFrame + 1] + rolls[firstInFrame + 2]
-    }
-    
-    func nextBallForSpare(_ firstInFrame: Int) -> Int {
-        rolls[firstInFrame + 2]
-    }
-}
-
 final class BowlingGameTDDTests: XCTestCase {
     private var game: Game!
     
@@ -91,8 +40,13 @@ final class BowlingGameTDDTests: XCTestCase {
         game.roll(3)
         game.roll(4)
         rollMany(numberOfRolls: 16, pins: 0)
-        XCTAssertEqual(24, game.score())
         
+        XCTAssertEqual(24, game.score())
+    }
+    
+    func testPerfectGame() {
+        rollMany(numberOfRolls: 12, pins: 10)
+        XCTAssertEqual(300, game.score())
     }
     
     //MARK: - Helpers

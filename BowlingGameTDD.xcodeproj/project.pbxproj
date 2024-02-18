@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		553D0AF72B82224800AF9E9B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D0AF62B82224800AF9E9B /* main.swift */; };
 		553D0B042B82225500AF9E9B /* BowlingGameTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D0B032B82225500AF9E9B /* BowlingGameTDDTests.swift */; };
+		553D0B092B822F9700AF9E9B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D0B082B822F9700AF9E9B /* Game.swift */; };
+		553D0B0E2B8232BC00AF9E9B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D0B082B822F9700AF9E9B /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,7 @@
 		553D0AF62B82224800AF9E9B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		553D0B012B82225500AF9E9B /* BowlingGameTDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingGameTDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		553D0B032B82225500AF9E9B /* BowlingGameTDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameTDDTests.swift; sourceTree = "<group>"; };
+		553D0B082B822F9700AF9E9B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				553D0AF62B82224800AF9E9B /* main.swift */,
+				553D0B082B822F9700AF9E9B /* Game.swift */,
 			);
 			path = BowlingGameTDD;
 			sourceTree = "<group>";
@@ -172,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				553D0AF72B82224800AF9E9B /* main.swift in Sources */,
+				553D0B092B822F9700AF9E9B /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				553D0B042B82225500AF9E9B /* BowlingGameTDDTests.swift in Sources */,
+				553D0B0E2B8232BC00AF9E9B /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
