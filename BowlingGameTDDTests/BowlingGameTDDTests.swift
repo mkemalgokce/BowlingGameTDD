@@ -26,7 +26,7 @@ final class BowlingGameTDDTests: XCTestCase {
         game.roll(0)
     }
     
-    func gutterGame() {
+    func testGutterGame() {
         for i in 0 ..< 20 {
             game.roll(0)
         }
