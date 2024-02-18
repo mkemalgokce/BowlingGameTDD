@@ -37,4 +37,12 @@ final class BowlingGameTDDTests: XCTestCase {
         
         XCTAssertEqual(game.score(), 0)
     }
+    
+    func testAllOnes() {
+        for i in 0 ..< 20 {
+            game.roll(1)
+        }
+        
+        XCTAssertEqual(20, game.score())
+    }
 }
